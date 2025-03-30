@@ -9,7 +9,7 @@ jobs:
   validate-html: 
     runs-on: ubuntu-latest
     steps: 
-      - name: Chekout del cogigo
+      - name: Checkout del código
         uses: actions/checkout@v3
 
       - name: Validar HTML
@@ -17,15 +17,15 @@ jobs:
         with:
           file: index.html
 
-deploy: 
-  needs: validate-html
-  runs-on: ubuntu-latest
-  steps: 
-    - name: Checkout del codigo
-      uses: actions/checkout@v3
+  deploy:
+    needs: validate-html
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout del codigo
+        uses: actions/checkout@v3
 
-    - name: Configurar Github pages
-      uses: actions/configure-pages@v3
+      - name: Configurar Github pages
+        uses: actions/configure-pages@v3
 
-    - name: Publicar Github pages
-      uses: actions/upload-pages-artifact@v2
+      - name: Publicar Github pages
+        uses: actions/upload-pages-artifact@v2
