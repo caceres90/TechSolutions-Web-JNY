@@ -1,4 +1,4 @@
-name: Deplyo Website
+name: Deplou Website
 
 on:
   push: 
@@ -9,7 +9,7 @@ jobs:
   validate-html: 
     runs-on: ubuntu-latest
     steps: 
-      - name: Checkout del código
+      - name: Checkout del codigo
         uses: actions/checkout@v3
 
       - name: Validar HTML
