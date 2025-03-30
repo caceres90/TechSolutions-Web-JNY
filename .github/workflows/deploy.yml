@@ -1,15 +1,15 @@
-name: Deplou Website
+name: Deploy Website
 
 on:
-  push: 
-    branches: 
+  push:
+    branches:
       - main
 
-jobs: 
-  validate-html: 
+jobs:
+  validate-html:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Checkout del codigo
+    steps:
+      - name: Checkout del código
         uses: actions/checkout@v3
 
       - name: Validar HTML
@@ -20,12 +20,12 @@ jobs:
   deploy:
     needs: validate-html
     runs-on: ubuntu-latest
-    steps: 
-      - name: Checkout del codigo
+    steps:
+      - name: Checkout del código
         uses: actions/checkout@v3
 
-      - name: Configurar Github pages
+      - name: Configurar GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name: Publicar Github pages
+      - name: Publicar en GitHub Pages
         uses: actions/upload-pages-artifact@v2
